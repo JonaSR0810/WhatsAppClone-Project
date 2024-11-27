@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import ChatList from "./ChatList";
-import "../styles/whatsapp.css";
-import Buscar from "./Buscar";
+import "@/styles/whatsapp.css";
+
 
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;

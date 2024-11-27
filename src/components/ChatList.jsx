@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import '../styles/chatlist.css'
+import '@/styles/chatlist.css'
 import Avatar from '@mui/material/Avatar';
 import Buscar from './Buscar';
 

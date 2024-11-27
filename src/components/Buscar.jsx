@@ -1,4 +1,4 @@
-import "../styles/Buscar.css"
+import "@/styles/Buscar.css"
 import "https://kit.fontawesome.com/23a2b9705b.js";
 import { createClient } from '@supabase/supabase-js';
 import { useState, useEffect } from 'react';
