@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./src/App.css" />
+    
+  </head>
+  <body>
+    <div className="register-container">
+      <div className="register-box">
+        <div className="register-header">
+          <div className="register-logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#4ade80"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+            <h1>Registro</h1>
+          </div>
+          <p>Crear una cuenta para WhatsApp+</p>
+        </div>
+        <form id="formularioRegister">
+          <div className="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              id="nombre"
+              type="text"
+              required
+              placeholder="Introduce tu nombre"
+            />
+          </div>
+          <div className="form-group">
+            <label for="username">Usuario</label>
+            <input
+              id="username"
+              type="text"
+              required
+              placeholder="Introduce tu usuario"
+            />
+          </div>
+          <div className="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value=""
+              placeholder="john@example.com"
+            />
+          </div>
+          <div className="form-group">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              value=""
+              placeholder="Introduce tu contraseña"
+            />
+          </div>
+
+          <button id="botonReg">Registrarse</button>
+        </form>
+        <div className="login-link">
+          <p>¿Ya tienes una cuenta? <a href="./index.html">Iniciar Sesión</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Obtén el formulario
+      const formulario = document.getElementById("formularioRegister");
+
+      // Manejador de evento para el envío del formulario
+      formulario.addEventListener("submit", (e) => {
+        e.preventDefault(); // Previene el envío predeterminado del formulario
+      })
+        </script>
+        <script type="module" src="./Registro.js"></script>
+  </body>
+</html>
