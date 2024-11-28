@@ -10,4 +10,6 @@ export default defineConfig({
       '@': '/src', // Esto apunta a la carpeta src
     },
   },
+
+  
 });
