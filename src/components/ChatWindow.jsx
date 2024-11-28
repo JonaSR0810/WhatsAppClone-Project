@@ -6,7 +6,7 @@ import Fab from "@mui/material/Fab";
 import Avatar from "@mui/material/Avatar";
 import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-import "../styles/ChatWindow.css";
+import "../styles/chatWindow.css";
 import "https://kit.fontawesome.com/23a2b9705b.js";
 
 
