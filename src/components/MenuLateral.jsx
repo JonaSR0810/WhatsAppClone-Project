@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { useState,useEffect } from "react";
 import "https://kit.fontawesome.com/23a2b9705b.js";
-import "@/styles/whatsapp.css";
+import "../styles/whatsapp.css";
 import Avatar from '@mui/material/Avatar';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
