@@ -65,7 +65,7 @@ function Login() {
           <button type="button" onClick={login}> Iniciar Sesión </button>
         </form>
         <div className="forgot-password">
-          <a href="/Registro.html">Registrarse</a>
+          <a href="../../Registro.html">Registrarse</a>
         </div>
       </div>
     </div>
