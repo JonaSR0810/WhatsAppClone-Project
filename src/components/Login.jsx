@@ -3,6 +3,8 @@
 import '../styles/Login.css';
 import { createClient } from '@supabase/supabase-js'
 
+import { useNavigate } from "react-router-dom";
+
 
 const supabaseUrl  = import.meta.env.VITE_SUPABASE_URL
 const supabaseKey  = import.meta.env.VITE_SUPABASE_KEY
@@ -11,7 +13,7 @@ const supabase = createClient(supabaseUrl,supabaseKey)
 
 function Login() {
 
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -65,7 +67,7 @@ function Login() {
           <button type="button" onClick={login}> Iniciar Sesión </button>
         </form>
         <div className="forgot-password">
-          <a href="../../Registro.html">Registrarse</a>
+        <button onClick={() => navigate("/register")}>Registrarse</button>
         </div>
       </div>
     </div>

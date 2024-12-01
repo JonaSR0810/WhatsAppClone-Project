@@ -56,7 +56,7 @@ function MenuLateral() {
     sessionStorage.removeItem("access_token")
     sessionStorage.removeItem("refresh_token")
     sessionStorage.removeItem("userId")
-    window.location.href = "../../index.html"
+    window.location.href = "/login"
   }
 
 

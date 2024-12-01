@@ -1,12 +1,16 @@
 import { useState } from "react";
+
 import Sidebar from "./components/Sidebar";
 import ChatWindow from "./components/ChatWindow";
 import "./styles/whatsapp.css";
 import MenuLateral from "./components/MenuLateral";
+import { useNavigate } from "react-router-dom";
 
 
 
 function App() {
+  const navigate = useNavigate();
+  {sessionStorage.getItem('access_token') ? navigate("/") : navigate("/login")} 
   // Estado para almacenar el chat seleccionado
   const [conversations, setConversations] = useState([]);
   const [selectedChat, setSelectedChat] = useState(null);
@@ -29,6 +33,7 @@ function App() {
           Abrir Chats
         </button>
       )}
+  
 
       {/* La barra lateral se muestra o se oculta según el estado `isSidebarOpen` 
       Parametros:
