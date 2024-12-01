@@ -30,7 +30,7 @@ function Login() {
       sessionStorage.setItem('access_token',data.session.access_token)
     sessionStorage.setItem('refresh_token',data.session.refresh_token)
     sessionStorage.setItem('userId', data.user.id)
-      window.location.href = "../../index.html"
+    navigate("/")
   }
   
   return (

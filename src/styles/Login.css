@@ -118,13 +118,15 @@ button:disabled {
   margin-top: 1rem;
 }
 
-.forgot-password a {
+.forgot-password button {
+  background-color:#1f1f23;
   color: #4ade80;
   font-size: 0.875rem;
   text-decoration: none;
   font-weight: bold;
 }
 
-.forgot-password a:hover {
+.forgot-password button:hover {
+  background-color:#1f1f23;
   text-decoration: underline;
 }

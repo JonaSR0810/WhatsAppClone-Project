@@ -4,6 +4,7 @@ import "https://kit.fontawesome.com/23a2b9705b.js";
 import "../styles/whatsapp.css";
 import Avatar from '@mui/material/Avatar';
 
+import { useNavigate } from "react-router-dom";
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
@@ -11,6 +12,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 /* eslint-disable react/prop-types */
 function MenuLateral() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("")
   const [imageUser, setImageUser] = useState("")
 
@@ -53,10 +55,12 @@ function MenuLateral() {
   }
 
   function cerrarSesion(){
+    navigate("/login")
     sessionStorage.removeItem("access_token")
     sessionStorage.removeItem("refresh_token")
     sessionStorage.removeItem("userId")
-    window.location.href = "/login"
+    
+
   }
 
 
