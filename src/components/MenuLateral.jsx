@@ -55,52 +55,54 @@ function MenuLateral() {
   }
 
   function cerrarSesion(){
+
+    sessionStorage.clear()
     navigate("/login")
-    sessionStorage.removeItem("access_token")
-    sessionStorage.removeItem("refresh_token")
-    sessionStorage.removeItem("userId")
     
 
   }
 
+  const userId = sessionStorage.getItem("userId")
+  useEffect(() => {
+    if (userId) {
+      // Llamada para obtener el nombre
+      async function sacarNombre() {
+        let { data: Users, error } = await supabase
+          .from("Users")
+          .select("*")
+          .eq("userId", userId);
 
-  async function sacarNombre(){
-    const userId= sessionStorage.getItem('userId')
-    let { data: Users, error } = await supabase
-    .from('Users')
-    .select('*')
-    .eq('userId', userId)
-
-    if(error){
-      console.log("Error al sacar el usuario: " + error)
-    }else{
-      setUsername(Users[0].nombre)
-    }
-
-    
-  }
-  async function sacarImagen(){
-    const userId= sessionStorage.getItem('userId')
-    let { data: Users, error } = await supabase
-    .from('Users')
-    .select('*')
-    .eq('userId', userId)
-
-    if(error){
-      console.log("Error al sacar el usuario: " + error)
-    }else{
-      if (Users[0].image) {
-        setImageUser(Users[0].image)
-      } else {
-        setImageUser(Users[0].nombre.charAt(0).toUpperCase());
+        if (error) {
+          console.log("Error al sacar el usuario: " + error);
+        } else {
+          setUsername(Users[0]?.nombre);
+        }
       }
+
+      // Llamada para obtener la imagen
+      async function sacarImagen() {
+        let { data: Users, error } = await supabase
+          .from("Users")
+          .select("*")
+          .eq("userId", userId);
+
+        if (error) {
+          console.log("Error al sacar el usuario: " + error);
+        } else {
+          const userImage = Users[0]?.image;
+          if (userImage) {
+            setImageUser(userImage);
+          } else {
+            setImageUser(Users[0]?.nombre.charAt(0).toUpperCase());
+          }
+        }
+      }
+
+      // Llamar a las funciones para obtener los datos del usuario
+      sacarNombre();
+      sacarImagen();
     }
-
-    
-  }
-
-  useEffect(()=>sacarNombre,[])
-  useEffect(()=> sacarImagen, [])
+  }, [userId]);
 
 
   return (
@@ -164,7 +166,7 @@ function MenuLateral() {
             )}
             <div className="nombreUsuario">{username}</div>
           </div>
-            <button id="logout" onClick={() => cerrarSesion()}>Cerrar sesión</button>
+            <button id="logout" onClick={cerrarSesion}>Cerrar sesión</button>
         </div>
       </nav>
     </>
